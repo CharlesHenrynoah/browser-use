@@ -33,7 +33,7 @@ class SearchResponse(BaseModel):
     browser_state: Optional[Dict[str, Any]] = None
 
 # Initialisation de l'assistant
-assistant = VirtualAssistant(os.getenv("GOOGLE_API_KEY"))
+assistant = VirtualAssistant(os.getenv("GOOGLE_API_KEY", "AIzaSyBfGWbhIFlYuS6fbNSrjHBojHnPBhIB_wM"))
 
 @app.post("/search")
 async def search(request: SearchRequest) -> SearchResponse:
